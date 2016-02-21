@@ -2,7 +2,6 @@ export PATH="/usr/local/bin:$PATH"
 export RT_REPO_PATH="~/code/docker/roadtrippers"
 
 eval "$(rbenv init -)"
-eval "$(pyenv init -)"
 
 function tabname {
   printf "\e]1;$1\a"
