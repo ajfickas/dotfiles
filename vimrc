@@ -1,4 +1,5 @@
-execute pathogen#infect()
+" TODO: Commented out because it errors when starting vim.
+" execute pathogen#infect()
 
 :set tw=80
 :set formatoptions+=t
