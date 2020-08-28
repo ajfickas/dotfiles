@@ -1,3 +1,5 @@
+" TODO Review and clean up contents -- Not clear how much of this I actually want vs. was copied from somewhere.
+
 " TODO: Commented out because it errors when starting vim.
 " execute pathogen#infect()
 
