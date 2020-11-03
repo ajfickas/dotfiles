@@ -9,7 +9,9 @@ Include Roadtriuppers-specific `bash_profile` configuration by sourcing `bash_pr
 ## Vim
 Create a symlink to this repo's vimrc: `ln -s ~/code/dotfiles/vimrc ~/.vimrc`
 
-## System Preferences (via dconf)
+## System Preferences
+To set up preferred settings run: `ubuntu/gsettings.sh`
+
 # TODO WIP
 1. Symlink user profile: `sudo ln -s ~/code/dotfiles/dconf/profile /etc/dconf/profile/user`
 2. Symlink keyfile: `sudo ln -s ~/code/dotfiles/dconf/keyfile /etc/dconf/db/local.d/01-gnome`
