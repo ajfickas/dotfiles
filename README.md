@@ -18,3 +18,4 @@ To set up preferred settings run: `ubuntu/gsettings.sh`
 3. Update dconf database: `dconf update`
 
 ## Install software
+Run: `ubuntu/packages.sh`
