@@ -1,0 +1,27 @@
+#!/bin/bash
+set -euxo pipefail
+
+# Install firmware extraction tools
+cd ~/code
+git clone https://github.com/patjak/facetimehd-firmware.git
+cd facetimehd-firmware
+make
+sudo make install
+
+# Install the driver
+# NOTE: Use `uname -r` to determine `linux-headers-
+sudo apt-get install linux-headers-"$(uname -r)" git kmod libssl-dev checkinstall
+cd ~/code
+git clone https://github.com/patjak/bcwc_pcie.git
+cd bcwc_pcie
+make
+sudo checkinstall
+sudo depmod
+sudo modprobe -r bdc_pci
+sudo modprobe facetimehd
+
+# Try it out
+mplayer tv://
+
+# References
+# 1. https://github.com/patjak/bcwc_pcie/wiki/Get-Started#get-started-on-ubuntu
