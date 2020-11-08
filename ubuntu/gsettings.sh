@@ -34,6 +34,8 @@ gsettings set org.gnome.desktop.wm.preferences button-layout ':close'
 # TODO Window snapping?
 
 # Remove or further shrink app bar (requires setting the following three settings to false)
+# Consider `sudo apt remove gnome-shell-extension-ubuntu-dock` to actually remove dock and its overhead
+# but with the caveats described here: https://www.linuxuprising.com/2018/08/how-to-remove-or-disable-ubuntu-dock.html
 gsettings set org.gnome.shell.extensions.dash-to-dock autohide false
 gsettings set org.gnome.shell.extensions.dash-to-dock dock-fixed false
 gsettings set org.gnome.shell.extensions.dash-to-dock intellihide false
