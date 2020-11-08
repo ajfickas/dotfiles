@@ -3,6 +3,7 @@ set -euxo pipefail
 
 # Animations
 gsettings set org.gnome.desktop.interface enable-animations false
+gsettings set org.gnome.desktop.interface show-battery-percentage true
 
 # Keyboard
 # Set to a different value and then the desired value as a workaround for settings persisting but not being applied after restarting
