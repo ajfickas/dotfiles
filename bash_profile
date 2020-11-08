@@ -1,6 +1,9 @@
 # Customize prompt
 export PS1="\t \h:\W$ "
 
+# Default editor
+export EDITOR=vim
+
 # git aliases
 
 alias gita='git add '
