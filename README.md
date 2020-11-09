@@ -1,10 +1,10 @@
 # How to use
 
 ## Bash
-Include general `bash_profile` configuration by sourcing `bash_profile` in the system's `.bash_profile`: `source ~/code/dotfiles/bash_profile`
+Include general `bash_profile` configuration by sourcing `bash_profile.sh` in the system's `.bash_profile`: `source ~/code/dotfiles/bash_profile.sh`
 
 ### Roadtrippers Bash
-Include Roadtriuppers-specific `bash_profile` configuration by sourcing `bash_profile` in the system's `.bash_profile`: `source ~/code/dotfiles/bash_profile_roadtrippers`
+Include Roadtrippers-specific `bash_profile` configuration by sourcing `bash_profile.sh` in the system's `.bash_profile`: `source ~/code/dotfiles/bash_profile_roadtrippers.sh`
 
 ## Vim
 Create a symlink to this repo's vimrc: `ln -s ~/code/dotfiles/vimrc ~/.vimrc`
