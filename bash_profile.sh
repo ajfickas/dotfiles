@@ -1,5 +1,7 @@
 #!/bin/bash
 
+DOTFILE_REPO_PATH=$(dirname "${BASH_SOURCE[0]}")
+
 # Customize prompt
 export PS1="\t \h:\W$ "
 
@@ -69,6 +71,10 @@ google () {
      return 1
   fi
   open "https://www.google.com/search?q=$1"
+}
+
+bluetooth () {
+  source "$DOTFILE_REPO_PATH"/ubuntu/bluetooth.sh
 }
 
 # gsettings
