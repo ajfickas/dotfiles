@@ -73,8 +73,17 @@ google () {
   open "https://www.google.com/search?q=$1"
 }
 
-bluetooth () {
-  source "$DOTFILE_REPO_PATH"/ubuntu/bluetooth.sh
+blue () {
+  bluekeyboard
+  bluetouchpad
+}
+
+bluekeyboard () {
+  source "$DOTFILE_REPO_PATH"/ubuntu/bluetooth/keyboard.sh
+}
+
+bluetouchpad () {
+  source "$DOTFILE_REPO_PATH"/ubuntu/bluetooth/touchpad.sh
 }
 
 # gsettings
