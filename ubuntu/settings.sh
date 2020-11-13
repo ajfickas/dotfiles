@@ -35,3 +35,9 @@ gsettings set org.gnome.shell.extensions.dash-to-dock intellihide false
 # Desktop icons
 gsettings set org.gnome.shell.extensions.desktop-icons show-home false
 gsettings set org.gnome.shell.extensions.desktop-icons show-trash false
+
+# TODO Consider generalize file beyond gsettings?
+
+# Center laptop display below external display
+# x = width of external/2 - width of laptop/2 = 2560/2 - 1440/2
+xrandr --output eDP-1 --pos 560x1440
