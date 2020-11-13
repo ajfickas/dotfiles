@@ -1,3 +1,5 @@
+#!/bin/bash
+
 export RT_REPO_PATH="~/code/docker/roadtrippers"
 
 eval "$(rbenv init -)"

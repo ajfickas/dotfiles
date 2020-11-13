@@ -1,6 +1,6 @@
 #!/bin/bash
 
-DOTFILE_REPO_PATH=$(dirname "${BASH_SOURCE[0]}")
+BASH_SOURCE_PATH=$(dirname "${BASH_SOURCE[0]}")
 
 # Customize prompt
 export PS1="\t \h:\W$ "
@@ -79,11 +79,11 @@ blue () {
 }
 
 bluekeyboard () {
-  source "$DOTFILE_REPO_PATH"/ubuntu/bluetooth/keyboard.sh
+  source "$BASH_SOURCE_PATH"/bluetooth/keyboard.sh
 }
 
 bluetouchpad () {
-  source "$DOTFILE_REPO_PATH"/ubuntu/bluetooth/touchpad.sh
+  source "$BASH_SOURCE_PATH"/bluetooth/touchpad.sh
 }
 
 # gsettings
