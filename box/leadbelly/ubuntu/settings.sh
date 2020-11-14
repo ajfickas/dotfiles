@@ -1,6 +1,10 @@
 #!/bin/bash
 set -euxo pipefail
 
+# Background
+gsettings set org.gnome.desktop.background picture-options 'none'
+gsettings set org.gnome.desktop.background primary-color '#000000'
+
 # Interface
 gsettings set org.gnome.desktop.interface clock-show-seconds true
 gsettings set org.gnome.desktop.interface clock-show-weekday true
