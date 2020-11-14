@@ -14,13 +14,3 @@ source "$DOTFILES_PATH"/app/git.sh
 
 # Prompt
 export PS1="\[\e[1;36m\]\t\[\e[m\] "
-
-# Search
-google () {
-  if [ $# -ne 1 ]
-   then
-     echo "Usage: ${FUNCNAME[0]} <search-query>"
-     return 1
-  fi
-  google-chrome "https://www.google.com/search?q=$1"
-}

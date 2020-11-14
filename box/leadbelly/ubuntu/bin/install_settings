@@ -1,5 +1,5 @@
 #!/bin/bash
-set -euxo pipefail
+set -euo pipefail
 
 # Background
 gsettings set org.gnome.desktop.background picture-options 'none'

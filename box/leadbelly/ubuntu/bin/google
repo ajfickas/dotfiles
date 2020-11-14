@@ -1,0 +1,9 @@
+#!/bin/bash
+set -euo pipefail
+
+if [ $# -ne 1 ]
+then
+    echo "Usage: $0 <search-query>"
+    exit 1
+fi
+google-chrome "https://www.google.com/search?q=$1"
