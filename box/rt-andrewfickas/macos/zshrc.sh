@@ -1,5 +1,7 @@
 #!/bin/zsh
 
+DOTFILES_PATH=${0:a:h}
+
 # Docs
 alias react='open https://facebook.github.io/react/docs/getting-started.html'
 alias tmuxcheat='open http://tmuxcheatsheet.com/'
@@ -29,6 +31,5 @@ google () {
 # Visual Studio Code (path to `code` command)
 export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
 
-DOTFILES_PATH=${0:a:h}
 source "$DOTFILES_PATH"/../../../app/git.sh
 source "$DOTFILES_PATH"/rt.sh
