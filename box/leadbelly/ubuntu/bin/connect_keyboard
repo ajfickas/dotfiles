@@ -1,5 +1,5 @@
 #!/bin/bash
-set -euo pipefail
+set -eux
 
 # TODO Run through shellcheck
 
@@ -10,6 +10,8 @@ echo -e "\033[0m"
 keyboard_address="68:FE:F7:7D:8B:AB"
 stdbuf -oL bluetoothctl -- scan on | grep -m 1 "$keyboard_address"
 bluetoothctl -- connect "$keyboard_address"
+
+sleep 1
 
 # Set to a different value and then the desired value as a workaround for settings persisting but not being applied after restarting
 # TODO Consider applying these settings automatically upon bluetooth connect event: https://askubuntu.com/questions/259354/how-do-i-connect-to-my-bluetooth-headset

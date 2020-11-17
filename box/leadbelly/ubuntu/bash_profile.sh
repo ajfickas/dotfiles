@@ -4,6 +4,7 @@ BASH_SOURCE_PATH=$(dirname "${BASH_SOURCE[0]}")
 DOTFILES_PATH=$"$BASH_SOURCE_PATH"/../../..
 
 # Bin
+# TODO Make idempotent (add a conditional)
 export PATH=$PATH:"$BASH_SOURCE_PATH"/bin
 
 # Editor

@@ -1,7 +1,21 @@
 #!/bin/bash
 set -euo pipefail
 
+# Anki
+# From: https://apps.ankiweb.net/
+cd ~/Downloads
+wget https://github.com/ankitects/anki/releases/download/2.1.35/anki-2.1.35-linux-amd64.tar.bz2
+cd -
+tar xjf ~/Downloads/anki-2.1.35-linux-amd64.tar.bz2
+cd ~/Downloads/anki-2.1.35-linux-amd64
+sudo make install
+cd -
+rm ~/Downloads/anki-2.1.35-linux-amd64.tar.bz2
+rm -r ~/Downloads/anki-2.1.35-linux-amd64
+
+# Apt
 sudo apt install shellcheck
 sudo apt install tmux
 
+# Snap
 snap install zoom-client
