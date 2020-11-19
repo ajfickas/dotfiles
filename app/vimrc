@@ -1,3 +1,18 @@
 " Switch on syntax highlighting
 syntax on
 
+" Enable filetype detection, plugin, and indent
+filetype plugin indent on
+
+" Enable line numbers
+set number
+
+" Show existing tab with the width of 2 spaces
+set tabstop=2
+
+" When indenting with '>', use 2 spaces
+set shiftwidth=2
+
+" Upon pressing tab, insert 2 spaces
+set expandtab
+
