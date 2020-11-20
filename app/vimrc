@@ -16,3 +16,7 @@ set shiftwidth=2
 " Upon pressing tab, insert 2 spaces
 set expandtab
 
+" Turn off various back up files
+set nobackup
+set nowritebackup
+set noswapfile
