@@ -1,14 +1,18 @@
 #!/bin/bash
 set -eu
 
-# TODO Run through shellcheck
+keyboard_address="68:FE:F7:7D:8B:AB"
 
 # Connect keyboard
 echo -e "\033[0;32m"
 echo "Turn keyboard off and on again to allow it to be discoverable"
+echo "When MAC address $keyboard_address appears, press ENTER to connect"
 echo -e "\033[0m"
-keyboard_address="68:FE:F7:7D:8B:AB"
-stdbuf -oL bluetoothctl -- scan on | grep -m 1 "$keyboard_address"
+
+bluetoothctl -- scan on &
+scan_pid=$!
+read -r
+kill $scan_pid
 bluetoothctl -- connect "$keyboard_address"
 
 sleep 1
