@@ -20,3 +20,6 @@ set expandtab
 set nobackup
 set nowritebackup
 set noswapfile
+
+" TODO Consider looking into better pasting support within tmux:
+" https://vi.stackexchange.com/questions/25311/how-to-activate-bracketed-paste-mode-in-gnome-terminal-for-vim-inside-tmux
