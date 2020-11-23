@@ -14,6 +14,7 @@ sudo apt-get install linux-headers-"$(uname -r)" git kmod libssl-dev checkinstal
 cd ~/code
 git clone https://github.com/patjak/bcwc_pcie.git
 cd bcwc_pcie
+make clean
 make
 sudo checkinstall
 sudo depmod
