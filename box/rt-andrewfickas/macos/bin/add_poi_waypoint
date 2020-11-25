@@ -1,0 +1,75 @@
+#!/bin/bash
+set -eux
+
+# TODO
+# curl 'https://maps.roadtrippers.test:3000/api/v2/trips/20630417/waypoints' \
+#   -H 'Connection: keep-alive' \
+#   -H 'Accept: application/json, text/javascript, */*; q=0.01' \
+#   -H 'X-CSRF-Token: n5+d2NX4vCEzPfEC6c4fYCt/ti8auQbDZGZyw1pMgIKx6A2e7W/E+08yqa8XS6ybqsUrdRHU3gr6ECKzw82sew==' \
+#   -H 'X-Requested-With: XMLHttpRequest' \
+#   -H 'User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.193 Safari/537.36' \
+#   -H 'Content-Type: application/json' \
+#   -H 'Origin: https://maps.roadtrippers.test:3000' \
+#   -H 'Sec-Fetch-Site: same-origin' \
+#   -H 'Sec-Fetch-Mode: cors' \
+#   -H 'Sec-Fetch-Dest: empty' \
+#   -H $'Referer: https://maps.roadtrippers.test:3000/?lng=-88.2179257755418&lat=37.482903349817065&z=5.078496613613553&a2=t\u002120630417' \
+#   -H 'Accept-Language: en-US,en;q=0.9' \
+#   -H $'Cookie: acquisition_date=2020-08-05+16%3A36%3A14+%2B0000; ajs_group_id=null; _ga=GA1.2.549929182.1596745767; _fbp=fb.1.1596745772276.820148906; referrer=; location=-81.0998%2C32.0835; search_location=%7B%22name%22%3A%22Savannah%2C%20GA%2C%20US%22%2C%22longitude%22%3A-81.0998%2C%22latitude%22%3A32.0835%2C%22type%22%3A%22manual%22%7D; _gid=GA1.2.464459844.1605718786; __gads=ID=01882aa3945b744e:T=1596745768:R:S=ALNI_MYgyUrNGjaEwul6KEclJM8gd0WeCw; sailthru_pageviews=1; auth_token=3Kbkzpswlc0QHnOpDxXnSA; pro_ends_at=4696069656; ajs_user_id=%223226960%22; ajs_anonymous_id=%22929683df-dc12-4715-8fc2-3aaf72b38171%22; mp_c0ac9415e8ae6e955548b5f46addbdcd_mixpanel=%7B%22distinct_id%22%3A%20%22175dc899701148-0965f72b6a4fc9-326f7207-384000-175dc8997028bd%22%2C%22%24device_id%22%3A%20%22175dc899701148-0965f72b6a4fc9-326f7207-384000-175dc8997028bd%22%2C%22mp_lib%22%3A%20%22Segment%3A%20web%22%2C%22%24initial_referrer%22%3A%20%22https%3A%2F%2Fmaps.roadtrippers.test%3A3000%2Fpeople%2Fafickas%3Fjs_route%3Dtrue%26lat%3D38.111298887503835%26lng%3D-87.81080503065931%26page%3D2%26z%3D4.688103689671123%26a2%3Dt\u002120630375%22%2C%22%24initial_referring_domain%22%3A%20%22maps.roadtrippers.test%3A3000%22%2C%22__alias%22%3A%20%223226960%22%2C%22%24user_id%22%3A%20%223226960%22%2C%22mp_name_tag%22%3A%20%22ajfickas%40gmail.com%22%2C%22user_id%22%3A%203226960%2C%22id%22%3A%20%223226960%22%2C%22%24email%22%3A%20%22ajfickas%40gmail.com%22%7D; _gat=1; _session_id=Z3dKbStOY093UUJQZlIvakNzY3dUb29Ea3ZZMzVYdVJyams0RHhnS0dsY1NKN3hFajVzWkRaY0tLelJZcGdJNXlSNTNEVjhmZlNIQWU1YU1oNmZKQk1WSXZhWlljc2l5N1h6Z3RWOHZoTEVNTXF5RFZ1UzF2cENwS0t3ako3WGUvYlRLUzIyUFUzd1N4eXVBcXZPYi9xSTVIS3FnRVpRWENsNHFZRGc5SEM2ektud3FrMDBnZ2RnOVZzSVRFMWxkOHlMQ2dvd3ZPN09Ydy95UjZMemQvYW1Dc2ljNm54d1FlQndhMzc5UURwb09ic001S0l0aGZkYXdBTkxXaWlxTzh4ckJURURrWkdSY0l0aEphZmJyTHV6bEdYNDBOSTgrTndhYmtrVGcyNGd6QVZ3UkY5eXVVTUdIemVVUUozcFQtLTN0cVF0S0lMSkExL0E1OGl4b0MyOGc9PQ%3D%3D--2f217cee359b8d1b2ac22c837b900b8beab479ab' \
+#   --data-binary '{"position":6,"trip_lock_version":17,"waypoint":{"poi_id":67325,"routed":true,"type":"poi"}}' \
+#   --compressed \
+#   --insecure
+
+# Options
+poi_id=
+trip_id=
+trip_lock_version=
+
+while :; do
+  case $1 in
+    -h|-\?|--help)
+      show_help
+      exit
+      ;;
+    --poi-id)
+      poi_id=$2
+      shift
+      ;;
+    --trip-id)
+      trip_id=$2
+      shift
+      ;;
+    --trip-lock-version)
+      trip_lock_version=$2
+      shift
+      ;;
+    --)
+      shift
+      break
+      ;;
+    -?*)
+      printf 'WARN: Unknown option: %s\n' "$1" >&2
+      exit 1
+      ;;
+    *)
+      break
+  esac
+
+  shift
+done
+
+curl "https://maps.roadtrippers.test:3000/api/v2/trips/$trip_id/waypoints" \
+  -H 'Connection: keep-alive' \
+  -H 'Accept: application/json, text/javascript, */*; q=0.01' \
+  -H 'X-CSRF-Token: n5+d2NX4vCEzPfEC6c4fYCt/ti8auQbDZGZyw1pMgIKx6A2e7W/E+08yqa8XS6ybqsUrdRHU3gr6ECKzw82sew==' \
+  -H 'X-Requested-With: XMLHttpRequest' \
+  -H 'Content-Type: application/json' \
+  -H 'Origin: https://maps.roadtrippers.test:3000' \
+  -H 'Sec-Fetch-Site: same-origin' \
+  -H 'Sec-Fetch-Mode: cors' \
+  -H 'Sec-Fetch-Dest: empty' \
+  -H $'Cookie: _session_id=Z3dKbStOY093UUJQZlIvakNzY3dUb29Ea3ZZMzVYdVJyams0RHhnS0dsY1NKN3hFajVzWkRaY0tLelJZcGdJNXlSNTNEVjhmZlNIQWU1YU1oNmZKQk1WSXZhWlljc2l5N1h6Z3RWOHZoTEVNTXF5RFZ1UzF2cENwS0t3ako3WGUvYlRLUzIyUFUzd1N4eXVBcXZPYi9xSTVIS3FnRVpRWENsNHFZRGc5SEM2ektud3FrMDBnZ2RnOVZzSVRFMWxkOHlMQ2dvd3ZPN09Ydy95UjZMemQvYW1Dc2ljNm54d1FlQndhMzc5UURwb09ic001S0l0aGZkYXdBTkxXaWlxTzh4ckJURURrWkdSY0l0aEphZmJyTHV6bEdYNDBOSTgrTndhYmtrVGcyNGd6QVZ3UkY5eXVVTUdIemVVUUozcFQtLTN0cVF0S0lMSkExL0E1OGl4b0MyOGc9PQ%3D%3D--2f217cee359b8d1b2ac22c837b900b8beab479ab' \
+  --data-binary "{\"trip_lock_version\":$trip_lock_version,\"waypoint\":{\"poi_id\":$poi_id,\"routed\":true,\"type\":\"poi\"}}" \
+  --compressed \
+  --insecure
+
