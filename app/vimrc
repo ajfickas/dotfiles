@@ -13,6 +13,9 @@ set tabstop=2
 " When indenting with '>', use 2 spaces
 set shiftwidth=2
 
+" Show newlines
+set list
+
 " Upon pressing tab, insert 2 spaces
 set expandtab
 
