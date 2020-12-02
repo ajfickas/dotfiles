@@ -12,6 +12,12 @@ export PATH=$PATH:$DOTFILES_PATH/box/rt-andrewfickas/macos/bin
 # Editor
 export EDITOR=vim
 
+# Google Chrome
+# Profiles defined here: "/Users/andrewfickas/Library/Application Support/Google/Chrome/Local State"
+# Profile directories found here: "/Users/andrewfickas/Library/Application Support/Google/Chrome/<profile-name>"
+export AF_CHROME_PROFILE_RT="Profile 2"
+export AF_CHROME_PROFILE_AJFICKAS="Profile 3"
+
 # Prompt
 export PROMPT='%(?:%F{green}➜:%F{red}➜) %F{cyan}%T%F{white} '
 
