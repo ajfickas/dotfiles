@@ -4,6 +4,9 @@ syntax on
 " Enable filetype detection, plugin, and indent
 filetype plugin indent on
 
+" Change working directory when changing directories in netrw
+let g:netrw_keepdir=0
+
 " Enable line numbers
 set number
 
