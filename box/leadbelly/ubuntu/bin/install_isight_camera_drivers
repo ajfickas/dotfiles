@@ -1,19 +1,27 @@
 #!/bin/bash
-set -euo pipefail
+set -eux
 
-# Install firmware extraction tools
-cd ~/code
-git clone https://github.com/patjak/facetimehd-firmware.git
-cd facetimehd-firmware
-make
-sudo make install
+# Install facetimehd firmware
+FACETIMEHD_DIR=/usr/lib/firmware/facetimehd
+echo $FACETIMEHD_DIR
+if [ ! -d "$FACETIMEHD_DIR" ]; then
+  cd ~/code
+  git clone https://github.com/patjak/facetimehd-firmware.git
+  cd facetimehd-firmware
+  make
+  sudo make install
+fi
+
+# Ensure bcwb_pcie repo exists
+if [ ! -d "$HOME/code/bcwc_pcie" ]; then
+  cd ~/code
+  git clone https://github.com/patjak/bcwc_pcie.git
+fi
 
 # Install the driver
 # NOTE: Use `uname -r` to determine `linux-headers-
 sudo apt-get install linux-headers-"$(uname -r)" git kmod libssl-dev checkinstall
-cd ~/code
-git clone https://github.com/patjak/bcwc_pcie.git
-cd bcwc_pcie
+cd ~/code/bcwc_pcie
 make clean
 make
 sudo checkinstall
