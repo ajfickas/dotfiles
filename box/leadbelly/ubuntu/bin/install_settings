@@ -25,6 +25,9 @@ gsettings set org.gnome.desktop.peripherals.mouse speed 1.0
 # Touchpad
 gsettings set org.gnome.desktop.peripherals.touchpad tap-to-click false
 
+# Disable having the screen go blank after a period of inactivity
+gsettings set org.gnome.desktop.session idle-delay 0
+
 # Window manager
 gsettings set org.gnome.desktop.wm.preferences button-layout ':close'
 # TODO Window snapping?
