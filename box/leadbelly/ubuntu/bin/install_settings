@@ -13,7 +13,7 @@ gsettings set org.gnome.desktop.interface show-battery-percentage true
 
 # Keyboard
 gsettings set org.gnome.desktop.peripherals.keyboard delay 250
-gsettings set org.gnome.desktop.peripherals.keyboard repeat-interval 30
+gsettings set org.gnome.desktop.peripherals.keyboard repeat-interval 15
 
 # Mouse
 # May help with mouse precision and not honing in on buttons, but not sure
