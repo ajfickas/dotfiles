@@ -7,6 +7,9 @@ filetype plugin indent on
 " Change working directory when changing directories in netrw
 let g:netrw_keepdir=0
 
+" Add guide for line length
+set colorcolumn=120
+
 " Enable line numbers
 set number
 
