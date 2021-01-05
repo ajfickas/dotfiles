@@ -8,7 +8,7 @@ filetype plugin indent on
 let g:netrw_keepdir=0
 
 " Add guide for line length
-set colorcolumn=120
+set colorcolumn=121
 
 " Enable line numbers
 set number
