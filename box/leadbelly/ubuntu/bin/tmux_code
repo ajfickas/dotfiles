@@ -1,0 +1,21 @@
+#!/bin/bash
+set -eu
+
+session=$1
+
+if tmux has-session -t "$session" ; then
+  echo 'Session already exists.'
+else
+  echo "Creating session \"$session\"..."
+  tmux new-session -d -s "$session" -c ~/code/"$session"
+
+  echo 'Creating git window...'
+  tmux rename-window -t 0 'git'
+
+  echo 'Creating vim window...'
+  tmux new-window -t "$session":1 -n 'vim' -c ~/code/"$session"
+  tmux send-keys -t 'vim' 'vim .' C-m
+fi
+
+echo 'Attaching...'
+tmux attach-session -t "$session":0
