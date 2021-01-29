@@ -7,6 +7,7 @@ alias react='open https://facebook.github.io/react/docs/getting-started.html'
 alias tmuxcheat='open http://tmuxcheatsheet.com/'
 
 # Dotfiles bin
+export PATH=$PATH:$DOTFILES_PATH/bin
 export PATH=$PATH:$DOTFILES_PATH/box/rt-andrewfickas/macos/bin
 
 # Editor
