@@ -12,6 +12,8 @@ export PATH=$PATH:$DOTFILES_PATH/box/rt-andrewfickas/macos/bin
 
 # Editor
 export EDITOR=vim
+# Setting editor to vim changes the editing mode, so explicitly set to emacs
+set -o emacs
 
 # Google Chrome
 # Profiles defined here: "/Users/andrewfickas/Library/Application Support/Google/Chrome/Local State"
