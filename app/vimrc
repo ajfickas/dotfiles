@@ -32,3 +32,11 @@ set noswapfile
 
 " TODO Consider looking into better pasting support within tmux:
 " https://vi.stackexchange.com/questions/25311/how-to-activate-bracketed-paste-mode-in-gnome-terminal-for-vim-inside-tmux
+
+# Ensure backspace works as expected
+# Added this when backspace was not working in insert mode on leadbelly/macos
+set backspace=indent,eol,start
+
+# Ensure spellcheck is turned off
+# Added this when I noticed words being highlighted on leadbelly/macos
+set nospell
