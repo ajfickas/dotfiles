@@ -46,4 +46,4 @@ let g:ctrlp_cmd='CtrlP :pwd'
 
 " Set max files index for ctrlp to index
 " Appears to fix when nested file failed to show up
-:let g:ctrlp_max_files=10000
+:let g:ctrlp_max_files=100000
