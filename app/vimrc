@@ -5,7 +5,7 @@ syntax on
 filetype plugin indent on
 
 " Change working directory when changing directories in netrw
-let g:netrw_keepdir=0
+"let g:netrw_keepdir=0
 
 " Add guide for line length
 set colorcolumn=121
@@ -33,10 +33,17 @@ set noswapfile
 " TODO Consider looking into better pasting support within tmux:
 " https://vi.stackexchange.com/questions/25311/how-to-activate-bracketed-paste-mode-in-gnome-terminal-for-vim-inside-tmux
 
-# Ensure backspace works as expected
-# Added this when backspace was not working in insert mode on leadbelly/macos
+" Ensure backspace works as expected
+" Added this when backspace was not working in insert mode on leadbelly/macos
 set backspace=indent,eol,start
 
-# Ensure spellcheck is turned off
-# Added this when I noticed words being highlighted on leadbelly/macos
+" Ensure spellcheck is turned off
+" Added this when I noticed words being highlighted on leadbelly/macos
 set nospell
+
+" Have ctrlp use pwd as root
+let g:ctrlp_cmd='CtrlP :pwd'
+
+" Set max files index for ctrlp to index
+" Appears to fix when nested file failed to show up
+:let g:ctrlp_max_files=10000
